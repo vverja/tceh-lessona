@@ -6,7 +6,7 @@ while True:
     some_number = randint(0,9)
     while True:
         statistics['total_attempts'] +=1
-        i_number = input("Угадайте число")
+        i_number = input("Угадайте число: ")
         if i_number == 'q':
             break
         elif int(i_number) == some_number:
@@ -21,4 +21,4 @@ while True:
 print('Всего правильных ответов:',statistics['correct_answers'])
 print('Неправильных ответов:',statistics['incorrect_answers'])
 percent = statistics['correct_answers']/statistics['total_attempts']*100
-print('Процент попадания: ', percent)
+print('Процент попадания: ', round(percent,2))
