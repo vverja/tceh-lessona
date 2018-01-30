@@ -1,0 +1,35 @@
+class person():
+    name = ''
+    age = 0
+    known_persons = []
+    def __init__(self, name='John Doe', age=20):
+        self.name = name
+        self.age = age
+    # def __init__(self, name):
+    #     self.name = name
+    #     self.age = 20
+    # def __init__(self):
+    #     self.name = 'John Doe'
+    #     self.age = 20
+
+    def know(self, some_person):
+        if isinstance(some_person,person):
+            self.known_persons.append(some_person)
+            print('Now i know ', some_person.name)
+
+    def is_known(self, some_person):
+        if isinstance(some_person,person):
+            try:
+                self.known_persons.index(some_person)
+                print('i know him')
+            except ValueError:
+                print('I don`t know him')
+
+vasya = person(name='Vasya', age=30)
+petya = person(name='Petya')
+anonym = person()
+vasya.know(petya)
+petya.know(vasya)
+
+vasya.is_known(anonym)
+petya.is_known(anonym)
